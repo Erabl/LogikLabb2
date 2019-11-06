@@ -1,0 +1,13 @@
+% U1 bindningen misslyckas då vi försöker deklarera A till y och B till x och X til Y vilket är som att säga a = b
+
+% U2 negation as failiure är att vi bevisar negationen av ett påstående igeno misslyckandet av exekvering
+%lite som bevis igenom motbevis av motsats
+
+findlast([T],[],T).    %rekursivt anrop har som basfall i en lista med enbart 1 element
+findlast([H|T],[H|R],S):-  %rasslar tillbaka med kapade heads
+  findlast(T,R,S).        %ropar tillbaka med listan från åvansteget utan huvuden
+
+partstirng([],[]).
+partstring([H|T],[H|L]):-
+  partstirng(T,L).
+
